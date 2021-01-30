@@ -6,7 +6,6 @@ public class EnemyStats : MonoBehaviour
 {
     // Start is called before the first frame update
     public int hp = 3;
-    public 
     void Start()
     {
         
