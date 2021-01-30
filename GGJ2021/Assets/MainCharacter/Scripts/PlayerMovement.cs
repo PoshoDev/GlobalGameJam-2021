@@ -5,7 +5,7 @@ using UnityEngine;
 
 [RequireComponent(typeof(CharacterController))]
 
-public class MainCharacterMovement : MonoBehaviour
+public class PlayerMovement : MonoBehaviour
 {
     public float speed = 7.5f;
     public float jumpSpeed = 8.0f;
