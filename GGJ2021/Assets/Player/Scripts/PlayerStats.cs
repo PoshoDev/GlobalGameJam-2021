@@ -19,6 +19,8 @@ public class PlayerStats : MonoBehaviour
 
     public GameObject animatedShell;
     public GameObject fireSnail;
+    public GameObject urchin;
+    public bool armor = false;
 
     // Start is called before the first frame update
     void Start()
@@ -49,21 +51,33 @@ public class PlayerStats : MonoBehaviour
     {
          if (col.gameObject.transform.tag == "enemy" && Time.time > nextHit){
             nextHit = Time.time + hitTimer;
-            if (hp == 1){
-                Debug.Log("Player is dead");
+            if (!armor){
+                if (hp == 1){
+                    Debug.Log("Player is dead");
+                }else{
+                    transform.GetChild(0).GetComponent<Animator>().SetBool("gotHit",true);
+                    hp--;
+                    lostShell = shells[0];
+                    shells[0] = shells[1];
+                    shells[1] = shells[2];
+                    shells[2] = 0;
+                    updateShells();
+                    Instantiate(animatedShell,transform.GetChild(0).GetChild(0).GetChild(0).position,transform.GetChild(0).GetChild(0).GetChild(0).rotation);
+                    Destroy(companions[0]);
+                    companions[0] = companions[1];
+                    companions[1] = companions[2];
+                    companions[2] = null;
+                    StartCoroutine(ShellAnimation(lostShell));
+                    Debug.Log("Player lost shell, "+hp+" hp remaining.");
+                    if(shells[0] == 2 ){
+                    armor = true;
+                    }
+                }
             }else{
-                transform.GetChild(0).GetComponent<Animator>().SetBool("gotHit",true);
-                hp--;
-                lostShell = shells[0];
-                shells[0] = shells[1];
-                shells[1] = shells[2];
-                shells[2] = 0;
-                updateShells();
-                Instantiate(animatedShell,transform.GetChild(0).GetChild(0).GetChild(0).position,transform.GetChild(0).GetChild(0).GetChild(0).rotation);
-                removeFirstCompanion();
-                StartCoroutine(ShellAnimation(lostShell));
-                Debug.Log("Player lost shell, "+hp+" hp remaining.");
+                armor = false;
+                Debug.Log("Armor protected player, "+hp+" hp remaining.");
             }
+            
         }
         if (col.gameObject.transform.tag == "shell"){
             if (hp == 4){
@@ -72,15 +86,26 @@ public class PlayerStats : MonoBehaviour
                 shells[0] = shells[1];
                 shells[1] = shells[2];
                 shells[2] = col.gameObject.GetComponent<ShellScript>().shellId;
-                shellMechanics(shell2,3);
-                updateShells();
+                Destroy(companions[0]);
+                companions[0] = companions[1];
+                companions[1] = companions[2];
+                companions[2] = null;
+                if(shells[0] == 2 ){
+                    armor = true;
+                }
+                
                 Instantiate(animatedShell,transform.GetChild(0).GetChild(0).GetChild(0).position,transform.GetChild(0).GetChild(0).GetChild(0).rotation);
+                shellMechanics(shells[2],3);
+                updateShells();
                 StartCoroutine(ShellAnimation(lostShell));
                 Destroy(col.gameObject);
             }else{
                 int id = col.gameObject.GetComponent<ShellScript>().shellId;
                 shells[hp-1] = id;
                 shellMechanics(id,hp-1);
+                if(shells[0] == 2 ){
+                    armor = true;
+                }
                 updateShells();
                 hp++;
                 Destroy(col.gameObject);
@@ -104,6 +129,7 @@ public class PlayerStats : MonoBehaviour
         transform.GetChild(0).GetChild(0).GetChild(1).GetComponent<SpriteRenderer>().sprite = sprites[shell2];
         transform.GetChild(0).GetChild(0).GetChild(2).GetComponent<SpriteRenderer>().sprite = sprites[shell3];
         
+        
     }
     void removeFirstCompanion(){
         Destroy(companions[0]);
@@ -114,16 +140,43 @@ public class PlayerStats : MonoBehaviour
         switch (id){
             case 1:
                 if(pos > 2){
-                    removeFirstCompanion();
                     companions[2] = Instantiate(fireSnail,transform.position,transform.rotation);
                 }else{
-                   companions[pos] = Instantiate(fireSnail,transform.position,transform.rotation);
+                    companions[pos] = Instantiate(fireSnail,transform.position,transform.rotation);
                 }
             break;
             case 2:
+
             break;
             case 3:
+                if(pos > 2){
+                    companions[2] = Instantiate(urchin,transform.position,transform.rotation,transform);
+                    restartUrchins();
+                }else{
+                    companions[pos] = Instantiate(urchin,transform.position,transform.rotation,transform);
+                    restartUrchins();
+                }
             break;
+        }
+    }
+
+    void restartUrchins(){
+        int urchins = 0;
+        for(int i = 0; i < 3; i++){
+            if(shells[i] == 3){
+                switch (urchins){
+                    case 0:
+                        companions[i].transform.position = transform.position +  new Vector3(-4.24f,-1,-4.24f);
+                    break;
+                    case 1:
+                        companions[i].transform.position = transform.position +  new Vector3(0,-1,6);
+                    break;
+                    case 2:
+                        companions[i].transform.position = transform.position + new Vector3(4.24f,-1,-4.24f);
+                    break;
+                }
+                urchins++;
+            }
         }
     }
 }
