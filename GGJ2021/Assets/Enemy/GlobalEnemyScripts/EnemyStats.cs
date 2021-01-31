@@ -16,10 +16,11 @@ public class EnemyStats : MonoBehaviour
     {
 
     }
-    void OnTriggerEnter(Collider other)
+    void OnCollisionEnter(Collision other)
     {
         if(other.transform.tag == "weapon"){
             Debug.Log("Enemy got hit by a weapon");
+
             hp--;
             if(hp == 0){
                 //Enemy Dies
@@ -31,5 +32,4 @@ public class EnemyStats : MonoBehaviour
             
         }
     }
-
 }

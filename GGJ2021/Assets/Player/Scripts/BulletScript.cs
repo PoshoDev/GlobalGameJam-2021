@@ -5,6 +5,7 @@ using UnityEngine;
 public class BulletScript : MonoBehaviour
 {
     public float speed = 20;
+    public float impactForce = 10;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,12 +17,13 @@ public class BulletScript : MonoBehaviour
     {
         
     }
-    void OnTriggerEnter(Collider other)
+    void OnCollisionEnter(Collision other)
     {
         Debug.Log("bullet hit something");
         if(other.transform.tag == "enemy" ||other.transform.tag == "terrain" ){
+            
             Destroy(gameObject);
         }
-            
-    }
+        
+    }     
 }
