@@ -28,27 +28,21 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKey("w")){
             transform.Translate(Vector3.forward * speed);
             transform.GetChild(0).GetComponent<Animator>().SetBool("walking",true);
-        }else{
-            if (Input.GetKey("s")){
-                transform.Translate(Vector3.back * speed);
-                transform.GetChild(0).GetComponent<Animator>().SetBool("walking",true);
-            }else{
-                if (Input.GetKey("a")){
-                    transform.Translate(Vector3.left * speed);
-                    transform.GetChild(0).GetComponent<Animator>().SetBool("walking",true);
-                }else{
-                    if (Input.GetKey("d")){
-                        transform.Translate(Vector3.right * speed);
-                        transform.GetChild(0).GetComponent<Animator>().SetBool("walking",true);
-                    }else{
-                        transform.GetChild(0).GetComponent<Animator>().SetBool("walking",false);
-                    }
-                }
-                
-
-            }
-            
-
+        }
+        if (Input.GetKey("s")){
+            transform.Translate(Vector3.back * speed);
+            transform.GetChild(0).GetComponent<Animator>().SetBool("walking",true);
+        }
+        if (Input.GetKey("a")){
+            transform.Translate(Vector3.left * speed);
+            transform.GetChild(0).GetComponent<Animator>().SetBool("walking",true);
+        }
+        if (Input.GetKey("d")){
+            transform.Translate(Vector3.right * speed);
+            transform.GetChild(0).GetComponent<Animator>().SetBool("walking",true);
+        }
+        if (!Input.GetKey("d") &&!Input.GetKey("s") &&!Input.GetKey("a") &&!Input.GetKey("w")){
+            transform.GetChild(0).GetComponent<Animator>().SetBool("walking",false);
         }
         
 
@@ -58,6 +52,10 @@ public class PlayerMovement : MonoBehaviour
         rotation.x = Mathf.Clamp(rotation.x, -lookXLimit, lookXLimit);
         playerCameraParent.localRotation = Quaternion.Euler(rotation.x, 0, 0);
         transform.eulerAngles = new Vector2(0, rotation.y);
-
+    }
+    void OnTriggerEnter(Collider other)
+    {
+        
+        
     }
 }

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3516914812077030431}
   - component: {fileID: 3516914812077030428}
   - component: {fileID: 3516914812077030429}
+  - component: {fileID: 35527674134290210}
   m_Layer: 0
   m_Name: Cube
   m_TagString: terrain
@@ -27,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3516914812077030434}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -35, y: 5, z: -5}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 10, y: 10, z: 10}
   m_Children: []
   m_Father: {fileID: 0}
@@ -93,3 +94,16 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.2979774, y: 1.1175965, z: 1.1537198}
   m_Center: {x: -0.014220047, y: 0.05879822, z: -0.013560295}
+--- !u!114 &35527674134290210
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3516914812077030434}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2583150197819e3449a69f039155cf13, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gridSize: {x: 5, y: 5, z: 5}

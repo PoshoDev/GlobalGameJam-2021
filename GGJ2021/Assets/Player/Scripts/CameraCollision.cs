@@ -19,7 +19,7 @@ public class CameraCollision : MonoBehaviour {
             transform.rotation = Quaternion.Euler(transform.rotation.x,35f,transform.rotation.z);
              Vector3 desiredCameraPos = transform.parent.TransformPoint( dollyDir * maxDistance );
              RaycastHit hit;
-             if( Physics.Linecast( transform.parent.position, desiredCameraPos, out hit ) )
+             if( Physics.Linecast( transform.parent.position, desiredCameraPos, out hit ) && hit.transform.tag == "terrain" )
              {
                  distance = Mathf.Clamp( hit.distance, minDistance, maxDistance );
              }

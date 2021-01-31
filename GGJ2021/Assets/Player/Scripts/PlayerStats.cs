@@ -4,8 +4,12 @@ using UnityEngine;
 public class PlayerStats : MonoBehaviour
 {
     public Sprite[] sprites= new Sprite[3];
+    public Sprite[] pieces1;
+    public Sprite[] pieces2;
+    public Sprite[] pieces3;
 
     public GameObject[] companions= new GameObject[3];
+    
     int[] shells = new int[3] { 0, 0, 0 };
 
     int lostShell;
@@ -17,7 +21,7 @@ public class PlayerStats : MonoBehaviour
     public float nextHit = 0.0F;
     public float timeTillNextHit;
 
-    public GameObject animatedShell;
+    public GameObject animatedPieces;
     public GameObject fireSnail;
     public GameObject urchin;
     public bool armor = false;
@@ -62,7 +66,7 @@ public class PlayerStats : MonoBehaviour
                     shells[1] = shells[2];
                     shells[2] = 0;
                     updateShells();
-                    Instantiate(animatedShell,transform.GetChild(0).GetChild(0).GetChild(0).position,transform.GetChild(0).GetChild(0).GetChild(0).rotation);
+                    GameObject animPieces = Instantiate(animatedPieces,transform.GetChild(0).GetChild(0).GetChild(0).position, Quaternion.identity);
                     Destroy(companions[0]);
                     companions[0] = companions[1];
                     companions[1] = companions[2];
@@ -93,8 +97,7 @@ public class PlayerStats : MonoBehaviour
                 if(shells[0] == 2 ){
                     armor = true;
                 }
-                
-                Instantiate(animatedShell,transform.GetChild(0).GetChild(0).GetChild(0).position,transform.GetChild(0).GetChild(0).GetChild(0).rotation);
+                Instantiate(animatedPieces,transform.GetChild(0).GetChild(0).GetChild(0).position,transform.GetChild(0).GetChild(0).GetChild(0).rotation);
                 shellMechanics(shells[2],3);
                 updateShells();
                 StartCoroutine(ShellAnimation(lostShell));
@@ -118,11 +121,41 @@ public class PlayerStats : MonoBehaviour
         
     }
     IEnumerator ShellAnimation(int lostShell){  
-        GameObject aniShell = GameObject.Find("Animated Shell Creator(Clone)");
-        aniShell.transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = sprites[lostShell];
-        aniShell.transform.GetChild(0).GetComponent<Animation>().Play();
+        GameObject aniPieces = GameObject.Find("FallingPieces(Clone)");
+        switch(lostShell){
+            case 1:
+                aniPieces.transform.GetComponent<PiecesScript>().piece1 = pieces1[0];
+                aniPieces.transform.GetComponent<PiecesScript>().piece2 = pieces1[1];
+                aniPieces.transform.GetComponent<PiecesScript>().piece3 = pieces1[2];
+                aniPieces.transform.GetComponent<PiecesScript>().piece4 = pieces1[3];
+                aniPieces.transform.GetComponent<PiecesScript>().piece5 = pieces1[3];
+                aniPieces.transform.GetComponent<PiecesScript>().piece6 = pieces1[3];
+                aniPieces.transform.GetComponent<PiecesScript>().piece7 = pieces1[3];
+            break;
+            case 2:
+                aniPieces.transform.GetComponent<PiecesScript>().piece1 = pieces2[0];
+                aniPieces.transform.GetComponent<PiecesScript>().piece2 = pieces2[1];
+                aniPieces.transform.GetComponent<PiecesScript>().piece3 = pieces2[2];
+                aniPieces.transform.GetComponent<PiecesScript>().piece4 = pieces2[2];
+                aniPieces.transform.GetComponent<PiecesScript>().piece5 = pieces2[2];
+                aniPieces.transform.GetComponent<PiecesScript>().piece6 = pieces2[2];
+                aniPieces.transform.GetComponent<PiecesScript>().piece7 = pieces2[2];
+            break;
+            case 3:
+                aniPieces.transform.GetComponent<PiecesScript>().piece1 = pieces3[0];
+                aniPieces.transform.GetComponent<PiecesScript>().piece2 = pieces3[1];
+                aniPieces.transform.GetComponent<PiecesScript>().piece3 = pieces3[2];
+                aniPieces.transform.GetComponent<PiecesScript>().piece4 = pieces3[3];
+                aniPieces.transform.GetComponent<PiecesScript>().piece5 = pieces3[3];   
+                aniPieces.transform.GetComponent<PiecesScript>().piece6 = pieces3[3];
+                aniPieces.transform.GetComponent<PiecesScript>().piece7 = pieces3[3];
+            break;
+
+        }
+        
+        
         yield return new WaitForSeconds(1.2f);
-        Destroy(aniShell);
+        Destroy(aniPieces);
     }
     void updateShells(){
         transform.GetChild(0).GetChild(0).GetChild(0).GetComponent<SpriteRenderer>().sprite = sprites[shell1];
