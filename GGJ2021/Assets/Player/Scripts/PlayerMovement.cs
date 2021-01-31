@@ -27,16 +27,30 @@ public class PlayerMovement : MonoBehaviour
         // Move the controller
         if (Input.GetKey("w")){
             transform.Translate(Vector3.forward * speed);
+            transform.GetChild(0).GetComponent<Animator>().SetBool("walking",true);
+        }else{
+            if (Input.GetKey("s")){
+                transform.Translate(Vector3.back * speed);
+                transform.GetChild(0).GetComponent<Animator>().SetBool("walking",true);
+            }else{
+                if (Input.GetKey("a")){
+                    transform.Translate(Vector3.left * speed);
+                    transform.GetChild(0).GetComponent<Animator>().SetBool("walking",true);
+                }else{
+                    if (Input.GetKey("d")){
+                        transform.Translate(Vector3.right * speed);
+                        transform.GetChild(0).GetComponent<Animator>().SetBool("walking",true);
+                    }else{
+                        transform.GetChild(0).GetComponent<Animator>().SetBool("walking",false);
+                    }
+                }
+                
+
+            }
+            
+
         }
-        if (Input.GetKey("s")){
-            transform.Translate(Vector3.back * speed);
-        }
-        if (Input.GetKey("a")){
-            transform.Translate(Vector3.left * speed);
-        }
-        if (Input.GetKey("d")){
-            transform.Translate(Vector3.right * speed);
-        }
+        
 
         // Player and Camera rotation
         rotation.y += Input.GetAxis("Mouse X") * lookSpeed;

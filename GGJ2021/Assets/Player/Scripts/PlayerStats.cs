@@ -49,7 +49,6 @@ public class PlayerStats : MonoBehaviour
             if (hp == 1){
                 Debug.Log("Player is dead");
             }else{
-                //Destroy(col.gameObject);
                 transform.GetChild(0).GetComponent<Animator>().SetBool("gotHit",true);
                 hp--;
                 lostShell = shells[0];
@@ -63,7 +62,6 @@ public class PlayerStats : MonoBehaviour
             }
         }
         if (col.gameObject.transform.tag == "shell"){
-            //nextHit = Time.time + nextHit;
             if (hp == 4){
                 Debug.Log("Player has max shells, replacing 1st shell");
                 lostShell = shells[0];
