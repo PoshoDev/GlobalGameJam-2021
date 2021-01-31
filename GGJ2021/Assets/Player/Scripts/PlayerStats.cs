@@ -4,6 +4,8 @@ using UnityEngine;
 public class PlayerStats : MonoBehaviour
 {
     public Sprite[] sprites= new Sprite[3];
+
+    public GameObject[] companions= new GameObject[3];
     int[] shells = new int[3] { 0, 0, 0 };
 
     int lostShell;
@@ -16,6 +18,7 @@ public class PlayerStats : MonoBehaviour
     public float timeTillNextHit;
 
     public GameObject animatedShell;
+    public GameObject fireSnail;
 
     // Start is called before the first frame update
     void Start()
@@ -57,6 +60,7 @@ public class PlayerStats : MonoBehaviour
                 shells[2] = 0;
                 updateShells();
                 Instantiate(animatedShell,transform.GetChild(0).GetChild(0).GetChild(0).position,transform.GetChild(0).GetChild(0).GetChild(0).rotation);
+                removeFirstCompanion();
                 StartCoroutine(ShellAnimation(lostShell));
                 Debug.Log("Player lost shell, "+hp+" hp remaining.");
             }
@@ -68,13 +72,15 @@ public class PlayerStats : MonoBehaviour
                 shells[0] = shells[1];
                 shells[1] = shells[2];
                 shells[2] = col.gameObject.GetComponent<ShellScript>().shellId;
+                shellMechanics(shell2,3);
                 updateShells();
                 Instantiate(animatedShell,transform.GetChild(0).GetChild(0).GetChild(0).position,transform.GetChild(0).GetChild(0).GetChild(0).rotation);
                 StartCoroutine(ShellAnimation(lostShell));
                 Destroy(col.gameObject);
             }else{
-                
-                shells[hp-1] = col.gameObject.GetComponent<ShellScript>().shellId;
+                int id = col.gameObject.GetComponent<ShellScript>().shellId;
+                shells[hp-1] = id;
+                shellMechanics(id,hp-1);
                 updateShells();
                 hp++;
                 Destroy(col.gameObject);
@@ -98,5 +104,26 @@ public class PlayerStats : MonoBehaviour
         transform.GetChild(0).GetChild(0).GetChild(1).GetComponent<SpriteRenderer>().sprite = sprites[shell2];
         transform.GetChild(0).GetChild(0).GetChild(2).GetComponent<SpriteRenderer>().sprite = sprites[shell3];
         
+    }
+    void removeFirstCompanion(){
+        Destroy(companions[0]);
+        companions[0] = companions[1];
+        companions[1] = companions[2];
+    }
+    void shellMechanics(int id, int pos){
+        switch (id){
+            case 1:
+                if(pos > 2){
+                    removeFirstCompanion();
+                    companions[2] = Instantiate(fireSnail,transform.position,transform.rotation);
+                }else{
+                   companions[pos] = Instantiate(fireSnail,transform.position,transform.rotation);
+                }
+            break;
+            case 2:
+            break;
+            case 3:
+            break;
+        }
     }
 }
