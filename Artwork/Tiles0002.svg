@@ -1,0 +1,210 @@
+
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="none" x="0px" y="0px" width="2048px" height="2048px" viewBox="0 0 2048 2048">
+<defs>
+<linearGradient id="Gradient_1" gradientUnits="userSpaceOnUse" x1="1033.35" y1="326.45000000000005" x2="1033.35" y2="2326.45" spreadMethod="pad">
+<stop  offset="0%" stop-color="#0066CC"/>
+
+<stop  offset="100%" stop-color="#004C99"/>
+</linearGradient>
+
+<linearGradient id="Gradient_2" gradientUnits="userSpaceOnUse" x1="924.2" y1="283.04999999999995" x2="924.2" y2="1565.15" spreadMethod="pad">
+<stop  offset="0%" stop-color="#0051A1"/>
+
+<stop  offset="100%" stop-color="#003468"/>
+</linearGradient>
+
+<radialGradient id="Gradient_3" gradientUnits="userSpaceOnUse" cx="0" cy="0" r="181.32500000000005" fx="0" fy="0" gradientTransform="matrix( 0.9999999999999998, 0, 0, 0.9999999999999998, 539.8,539.8) " spreadMethod="pad">
+<stop  offset="0%" stop-color="#0066CC"/>
+
+<stop  offset="100%" stop-color="#003265"/>
+</radialGradient>
+
+<linearGradient id="Gradient_4" gradientUnits="userSpaceOnUse" x1="350.875" y1="1566.7" x2="212.52499999999998" y2="1566.7" spreadMethod="pad">
+<stop  offset="0%" stop-color="#00468C"/>
+
+<stop  offset="100%" stop-color="#003468"/>
+</linearGradient>
+
+<linearGradient id="Gradient_5" gradientUnits="userSpaceOnUse" x1="1341.35" y1="250.55" x2="1341.35" y2="388.95" spreadMethod="pad">
+<stop  offset="0%" stop-color="#00468C"/>
+
+<stop  offset="100%" stop-color="#003468"/>
+</linearGradient>
+
+<linearGradient id="Gradient_6" gradientUnits="userSpaceOnUse" x1="1227.1" y1="739.8499999999999" x2="1227.1" y2="878.25" spreadMethod="pad">
+<stop  offset="0%" stop-color="#00468C"/>
+
+<stop  offset="100%" stop-color="#003468"/>
+</linearGradient>
+
+<g id="Layer3_0_FILL">
+<path fill="url(#Gradient_1)" stroke="none" d="
+M 2033.3 326.4
+L 33.3 326.4 33.3 2326.4 2033.3 2326.4 2033.3 326.4 Z"/>
+</g>
+
+<g id="Layer3_1_FILL">
+<path fill="url(#Gradient_2)" stroke="none" d="
+M 1497.55 1564.15
+L 1497.55 284.15 217.6 284.15 217.6 1564.15 1497.55 1564.15 Z"/>
+</g>
+
+<g id="Layer3_2_FILL">
+<path fill="#000000" stroke="none" d="
+M 1102.5 1051.55
+L 1102.5 923.55 -111 923.55 -111 1051.55 1102.5 1051.55 Z"/>
+</g>
+
+<g id="Layer3_3_FILL">
+<path fill="#000000" stroke="none" d="
+M 1074.05 971.55
+L 1074.05 923.55 -111 923.55 -111 971.55 1074.05 971.55 Z"/>
+</g>
+
+<g id="Layer3_4_FILL">
+<path fill="#002851" stroke="none" d="
+M 1280 768
+L 1152 768 1152 1024 1280 1024 1280 768 Z"/>
+</g>
+
+<g id="Layer3_5_FILL">
+<path fill="#00468C" stroke="none" d="
+M 1280 768
+L 1152 768 1152 896 1280 896 1280 768 Z"/>
+</g>
+
+<g id="Layer3_6_FILL">
+<path fill="#00468C" stroke="none" d="
+M 640 539.8
+Q 640 498.3 610.65 468.95 581.3 439.6 539.8 439.6 498.3 439.6 468.95 468.95 439.6 498.3 439.6 539.8 439.6 581.3 468.95 610.65 498.3 640 539.8 640 581.3 640 610.65 610.65 640 581.3 640 539.8 Z"/>
+</g>
+
+<g id="Layer3_7_FILL">
+<path fill="#00468C" stroke="none" d="
+M 640 539.8
+Q 640 498.3 610.65 468.95 581.3 439.6 539.8 439.6 498.3 439.6 468.95 468.95 439.6 498.3 439.6 539.8 439.6 581.3 468.95 610.65 498.3 640 539.8 640 581.3 640 610.65 610.65 640 581.3 640 539.8 Z"/>
+</g>
+
+<g id="Layer3_8_FILL">
+<path fill="#00468C" stroke="none" d="
+M 640 539.8
+Q 640 498.3 610.65 468.95 581.3 439.6 539.8 439.6 498.3 439.6 468.95 468.95 439.6 498.3 439.6 539.8 439.6 581.3 468.95 610.65 498.3 640 539.8 640 581.3 640 610.65 610.65 640 581.3 640 539.8 Z"/>
+</g>
+
+<g id="Layer3_9_FILL">
+<path fill="#00468C" stroke="none" d="
+M 640 539.8
+Q 640 498.3 610.65 468.95 581.3 439.6 539.8 439.6 498.3 439.6 468.95 468.95 439.6 498.3 439.6 539.8 439.6 581.3 468.95 610.65 498.3 640 539.8 640 581.3 640 610.65 610.65 640 581.3 640 539.8 Z"/>
+</g>
+
+<g id="Layer3_10_FILL">
+<path fill="url(#Gradient_3)" stroke="none" d="
+M 640 539.8
+Q 640 498.3 610.65 468.95 581.3 439.6 539.8 439.6 498.3 439.6 468.95 468.95 439.6 498.3 439.6 539.8 439.6 581.3 468.95 610.65 498.3 640 539.8 640 581.3 640 610.65 610.65 640 581.3 640 539.8 Z"/>
+</g>
+
+<g id="Layer3_11_FILL">
+<path fill="url(#Gradient_3)" stroke="none" d="
+M 640 539.8
+Q 640 498.3 610.65 468.95 581.3 439.6 539.8 439.6 498.3 439.6 468.95 468.95 439.6 498.3 439.6 539.8 439.6 581.3 468.95 610.65 498.3 640 539.8 640 581.3 640 610.65 610.65 640 581.3 640 539.8 Z"/>
+</g>
+
+<g id="Layer3_12_FILL">
+<path fill="url(#Gradient_3)" stroke="none" d="
+M 640 539.8
+Q 640 498.3 610.65 468.95 581.3 439.6 539.8 439.6 498.3 439.6 468.95 468.95 439.6 498.3 439.6 539.8 439.6 581.3 468.95 610.65 498.3 640 539.8 640 581.3 640 610.65 610.65 640 581.3 640 539.8 Z"/>
+</g>
+
+<g id="Layer3_13_FILL">
+<path fill="url(#Gradient_3)" stroke="none" d="
+M 640 539.8
+Q 640 498.3 610.65 468.95 581.3 439.6 539.8 439.6 498.3 439.6 468.95 468.95 439.6 498.3 439.6 539.8 439.6 581.3 468.95 610.65 498.3 640 539.8 640 581.3 640 610.65 610.65 640 581.3 640 539.8 Z"/>
+</g>
+
+<g id="Layer3_14_FILL">
+<path fill="url(#Gradient_4)" stroke="none" d="
+M 345.55 284.15
+L 217.6 284.15 217.6 1948.1 345.55 1948.1 345.55 284.15 Z"/>
+</g>
+
+<g id="Layer3_15_FILL">
+<path fill="url(#Gradient_5)" stroke="none" d="
+M 1664.1 383.9
+L 1664.1 255.9 256.1 255.9 382.6 383.9 1664.1 383.9 Z"/>
+</g>
+
+<g id="Layer3_16_FILL">
+<path fill="url(#Gradient_6)" stroke="none" d="
+M 1549.85 873.2
+L 1549.85 745.2 141.85 745.2 141.85 873.2 1549.85 873.2 Z"/>
+</g>
+</defs>
+
+<g transform="matrix( 1, 0, 0, 1, -33.3,-326.4) ">
+<use xlink:href="#Layer3_0_FILL"/>
+</g>
+
+<g transform="matrix( 1.0000457763671875, 0, 0, 1, 166.4,99.85) ">
+<use xlink:href="#Layer3_1_FILL"/>
+</g>
+
+<g transform="matrix( 1.6876678466796875, 0, 0, 1, 187.35,996.45) ">
+<use xlink:href="#Layer3_2_FILL"/>
+</g>
+
+<g transform="matrix( 0, 1.7281494140625, -2.6666717529296875, 0, 4510.8,191.85) ">
+<use xlink:href="#Layer3_3_FILL"/>
+</g>
+
+<g transform="matrix( 1, 0, 0, 1, 384,128) ">
+<use xlink:href="#Layer3_4_FILL"/>
+</g>
+
+<g transform="matrix( 1, 0, 0, 1, 384,0) ">
+<use xlink:href="#Layer3_5_FILL"/>
+</g>
+
+<g transform="matrix( 1, 0, 0, 1, 0,968.4) ">
+<use xlink:href="#Layer3_6_FILL"/>
+</g>
+
+<g transform="matrix( 1, 0, 0, 1, 0,0) ">
+<use xlink:href="#Layer3_7_FILL"/>
+</g>
+
+<g transform="matrix( 1, 0, 0, 1, 968.4,0) ">
+<use xlink:href="#Layer3_8_FILL"/>
+</g>
+
+<g transform="matrix( 1, 0, 0, 1, 968.4,968.4) ">
+<use xlink:href="#Layer3_9_FILL"/>
+</g>
+
+<g transform="matrix( 1, 0, 0, 1, 0,937.6) ">
+<use xlink:href="#Layer3_10_FILL"/>
+</g>
+
+<g transform="matrix( 1, 0, 0, 1, 0,-30.8) ">
+<use xlink:href="#Layer3_11_FILL"/>
+</g>
+
+<g transform="matrix( 1, 0, 0, 1, 968.4,-30.8) ">
+<use xlink:href="#Layer3_12_FILL"/>
+</g>
+
+<g transform="matrix( 1, 0, 0, 1, 968.4,937.6) ">
+<use xlink:href="#Layer3_13_FILL"/>
+</g>
+
+<g transform="matrix( -1.0003662109375, 0, 0, -0.8461761474609375, 601.7,1904.45) ">
+<use xlink:href="#Layer3_14_FILL"/>
+</g>
+
+<g transform="matrix( 1, 0, 0, 1, 0,0) ">
+<use xlink:href="#Layer3_15_FILL"/>
+</g>
+
+<g transform="matrix( 0.090911865234375, 0, 0, 1, 1523.1,22.8) ">
+<use xlink:href="#Layer3_16_FILL"/>
+</g>
+</svg>
