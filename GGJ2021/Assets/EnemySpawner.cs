@@ -5,12 +5,15 @@ using UnityEngine;
 public class EnemySpawner : MonoBehaviour
 {
     public GameObject mechrab, starfish;
-    public int xPos;
-    public int zPos = 0;
+
+    public int maxX;
+    public int maxZ;
     public int maxEnemies;
     public int chrabCount, starCount;
     public int enemyCount;
     public bool spawning = false;
+    public GameObject spawnerDoor;
+    public float doorSpeed = 1.0f;
     // Start is called before the first frame update
     void Start()
     {
@@ -29,17 +32,19 @@ public class EnemySpawner : MonoBehaviour
     IEnumerator SpawnEnemies(){
         while(maxEnemies > enemyCount){
             if(chrabCount > 0){
-                xPos = Random.Range(-18,18);
+                int xPos = Random.Range(-maxX,maxX);
+                int zPos = Random.Range(-maxZ,maxZ);
                 Instantiate(mechrab,transform.position+new Vector3(xPos,0,zPos),Quaternion.identity);
                 enemyCount++;
             }
 
             if(starCount > 0){
-                xPos = Random.Range(-18,18);
+                int xPos = Random.Range(-maxX,maxX);
+                int zPos = Random.Range(-maxZ,maxZ);
                 Instantiate(starfish,transform.position+new Vector3(xPos,-2,zPos),Quaternion.identity);
                 enemyCount++;
             }
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(4f);
             
         }
     }

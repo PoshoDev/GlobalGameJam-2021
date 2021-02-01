@@ -6,6 +6,7 @@
  {
      // Script should be attached to spawn point of foam rather than foam itself!!
      public GameObject bullet;    
+     public AudioSource pop;
      public float fireRate = 0.5F;
      private float nextFire = 0.0F;
  
@@ -21,6 +22,7 @@
          if (Input.GetKey(KeyCode.Mouse0) && Time.time > nextFire)
          {
              nextFire = Time.time + fireRate;
+             pop.Play();
              GameObject instFoam = Instantiate(bullet, transform.position, transform.rotation);
              
          }

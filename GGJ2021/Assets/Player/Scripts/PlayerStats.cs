@@ -1,12 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+
 public class PlayerStats : MonoBehaviour
 {
     public Sprite[] sprites= new Sprite[3];
     public Sprite[] pieces1;
+    public AudioSource audio1,audio2,audio3,reload,hit;
     public Sprite[] pieces2;
     public Sprite[] pieces3;
+
+    public Text text;
 
     public GameObject[] companions= new GameObject[3];
     
@@ -25,6 +30,8 @@ public class PlayerStats : MonoBehaviour
     public GameObject fireSnail;
     public GameObject urchin;
     public bool armor = false;
+
+    public bool alive = true;
 
     // Start is called before the first frame update
     void Start()
@@ -56,8 +63,10 @@ public class PlayerStats : MonoBehaviour
          if (col.gameObject.transform.tag == "enemy" && Time.time > nextHit){
             nextHit = Time.time + hitTimer;
             if (!armor){
+                hit.Play();
                 if (hp == 1){
-                    Debug.Log("Player is dead");
+                    text.text = "Game Over";
+                    alive = false;
                 }else{
                     transform.GetChild(0).GetComponent<Animator>().SetBool("gotHit",true);
                     hp--;
@@ -170,8 +179,10 @@ public class PlayerStats : MonoBehaviour
         companions[1] = companions[2];
     }
     void shellMechanics(int id, int pos){
+        reload.Play();
         switch (id){
             case 1:
+                audio1.Play();
                 if(pos > 2){
                     companions[2] = Instantiate(fireSnail,transform.position,transform.rotation);
                 }else{
@@ -179,9 +190,10 @@ public class PlayerStats : MonoBehaviour
                 }
             break;
             case 2:
-
+                audio2.Play();
             break;
             case 3:
+                audio3.Play();
                 if(pos > 2){
                     companions[2] = Instantiate(urchin,transform.position,transform.rotation,transform);
                     restartUrchins();
